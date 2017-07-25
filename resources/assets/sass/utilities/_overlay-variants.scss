@@ -1,0 +1,30 @@
+
+.overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	display: block;
+	z-index: 1;
+}
+
+.overlay-medium {
+	@extend .overlay;
+	background: rgba($brand-primary, .41);
+}
+
+.overlay-light {
+	@extend .overlay;
+	background: rgba($brand-primary, .21);
+}
+
+.overlay-dark-soft {
+	@extend .overlay;
+	background: rgba($brand-primary, .78);
+}
+
+.overlay-dark {
+	@extend .overlay;
+	background: rgba($brand-primary, .91);
+}

@@ -1,0 +1,49 @@
+
+.tabs-underlined {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	position: relative;
+	overflow-x: scroll;
+	background: #fff;
+	box-shadow: 2px -2px 4px rgba(0, 0, 0, .6);
+	@include media-breakpoint-up(lg) {
+		padding-top: 2rem;
+		background: none;
+		box-shadow: none;
+	}
+}
+
+.tabs-underlined.centered {
+	justify-content: space-between;
+	@include media-breakpoint-up(md) {
+		justify-content: center;
+	}
+}
+
+.tabs-underlined .tab {
+	flex: 1 0 50%;
+	padding: 1rem 1.5rem;
+	border-top: 4px solid transparent;
+	color: lighten(#5f697a, 15%);
+	@extend .letter-spacing;
+	font-weight: 500;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 14px;
+	transition: .2s ease;
+	border-bottom: 4px solid transparent;
+	@include media-breakpoint-up(md) {
+		flex: none;
+		padding: 1rem 2rem;
+	}
+}
+
+.tabs-underlined .tab.active {
+	border-bottom-color: lighten($purple, 5%);
+	color: $purple;
+}
+
+.tabs-underlined .tab:hover {
+	color: lighten($purple, 8%);
+}

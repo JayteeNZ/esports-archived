@@ -1,0 +1,60 @@
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500');
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+@import url('https://fonts.googleapis.com/css?family=Rubik:400,500');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500');
+
+$brand-primary: #1e263d;
+$hue-brand-primary: hue($brand-primary);
+$purple: #613d7c;
+
+$text-light: rgb(255, 255, 255);
+$text-light-soft: darken($text-light, 10%);
+$text-light-muted: darken($text-light, 30%);
+$text-light-faint: darken($text-light, 65%);
+$text-dark: hsl($hue-brand-primary, 10%, 25%);
+$text-dark-soft: hsl($hue-brand-primary, 10%, 40%);
+$text-dark-muted: hsl($hue-brand-primary, 10%, 60%);
+$text-dark-faint: hsl($hue-brand-primary, 10%, 80%);
+$text-brand: hsl($hue-brand-primary, 100%, 40%);
+
+$font-open-sans: "Open Sans";
+$font-poppins: "Poppins";
+$font-roboto: "Roboto";
+
+$font-family-sans-serif: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+
+// Body
+$body-bg: #f0f2f0;
+$body-color: $text-dark-muted;
+
+$link-color: #4183c4;
+$link-hover-decoration: none;
+$line-height-base: 1.8;
+
+$headings-color: $text-dark;
+
+// Inputs
+$input-color: $text-dark;
+$input-color-placeholder: $text-dark-muted;
+$input-border-color: #ddd;
+$input-border-focus: darken(#ddd, 10%);
+
+// Buttons
+$btn-primary-bg: $purple;
+
+$input-btn-padding-x:       1.8rem;
+$input-btn-padding-y:       .6rem;
+$input-btn-line-height:     1.3;
+
+$btn-font-weight: 300;
+$btn-box-shadow: none;
+$btn-border-radius: .28rem;
+
+// Navs
+
+$navbar-height: 70px;
+$navbar-brand-font-size: 1.125rem;
+
+$navbar-toggler-icon: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='#fff' d='M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z'/%3E%3C/svg%3E");

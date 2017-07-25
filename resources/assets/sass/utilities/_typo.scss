@@ -1,0 +1,24 @@
+
+.letter-spacing { letter-spacing: .7px; }
+
+.text-light { color: $text-light; }
+.text-light-soft { color: $text-light-soft; }
+.text-light-muted { color: $text-light-muted; }
+.text-light-faint { color: $text-light-faint; }
+.text-dark { color: $text-dark; }
+.text-dark-soft { color: $text-dark-soft; }
+.text-dark-muted { color: $text-dark-muted; }
+.text-dark-faint { color: $text-dark-faint; }
+.text-brand { color: $text-brand; }
+
+.font-primary { font-family: $font-roboto; }
+.font-secondary { font-family: $font-poppins; }
+.font-heading { font-family: $font-open-sans; }
+
+.font-sm { font-size: .875rem; }
+.font-xs { font-size: .75rem; }
+.font-lg { font-size: 1.125rem; }
+
+@include media-breakpoint-down(md) {
+	h2.scale-mobile { font-size: 1.625rem; }
+}

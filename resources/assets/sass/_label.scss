@@ -1,0 +1,28 @@
+.badge-outlined {
+	border: 2px solid transparent;
+	padding: .4rem 1rem;
+	margin-right: .4rem;
+	@extend .letter-spacing;
+}
+
+.badge {
+	padding: .5rem 1rem;
+	margin-right: .4rem;
+	@extend .letter-spacing;
+}
+
+.badge-outlined.badge-white {
+	border-color: #fff;
+}
+
+.badge-purple {
+	color: #fff;
+	border-color: darken($purple, 10%);
+	background: $purple;
+}
+
+.badge-outlined.badge-purple {
+	border-color: $purple;
+	background: none;
+	color: $purple;
+}

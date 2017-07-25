@@ -1,0 +1,18 @@
+
+.team-card {
+	width: 300px;
+	@include media-breakpoint-up(lg) {
+		width: 250px;
+	}
+	background: #fff;
+	border: 1px solid rgba(0, 0, 0, .10);
+	animation-name: fadeIn;
+	animation-duration: 2s;
+	margin: 0 auto;
+	margin-bottom: 2rem;
+}
+
+.team-card .thumbnail img {
+	height: 200px;
+	width: 100%;
+}

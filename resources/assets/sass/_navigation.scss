@@ -1,0 +1,119 @@
+
+.navbar-brand {
+	display: flex;
+	align-items: flex-start;
+	align-self: center;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	color: #fff;
+	@extend .letter-spacing;
+	@include hover-focus {
+		color: #fff;
+	}
+}
+
+.navbar .navbar-toggler {
+	@include hover-focus { outline: none }
+	align-self: initial;
+}
+
+.navbar .navbar-toggler-icon {
+	background-image: $navbar-toggler-icon;
+	width: 1em;
+	height: 1em;
+	vertical-align: initial;
+}
+
+@include media-breakpoint-down(md) {
+	.navbar-collapse--sidebar {
+		position: fixed;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		width: 280px;
+		margin: 0;
+		padding: 2rem 1rem;
+		overflow-y: auto;
+		max-height: 100%;
+		transition: .2s padding-top ease, .4s transform ease;
+
+		&::before {
+			position: fixed;
+			content: "";
+			display: block;
+		}
+
+		&.collapse {
+			display: block;
+			transform: translateX(-100%);
+		}
+	}
+
+	.navbar .navbar-collapse--sidebar {
+		background: darken($brand-primary, 2%);
+		border-right: 1px solid black;
+	}
+
+	.navbar-expand-lg .navbar-nav .nav-link {
+		padding: .7rem 1rem;
+		align-items: center;
+		font-weight: 500;
+	}
+
+	.navbar-expand-lg .user-info {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		flex-direction: row;
+		background: darken($brand-primary, 5%);
+		padding-top: .5rem;
+		padding-bottom: .5rem;
+
+		& .nav-link {
+			flex: 1;
+			text-align: center;
+			color: #fff;
+		}
+	}
+}
+
+.navbar-primary {
+	background: $brand-primary;
+	min-height: $navbar-height;
+	box-shadow: 1px 0px 4px rgba(0, 0, 0, .3);
+	.nav-link {
+		color: #757b8c;
+		font-weight: 600;
+		-webkit-font-smoothing: antialiased;
+		font-size: 14px;
+		text-transform: uppercase;
+		@extend .letter-spacing;
+		transition: all .2s ease;
+	}
+
+	.nav-link:hover,
+	.nav-link.active {
+		color: #fff;
+	}
+}
+
+@include media-breakpoint-up(lg) {
+	.navbar-expand-lg .navbar-nav .nav-link {
+		padding: 0 1.1rem;
+	}
+}
+
+.navbar .d-mobile {
+	display: inline-block;
+	vertical-align: middle;
+	padding-right: .8rem;
+	& svg {
+		height: 25px;
+		fill: lighten(#757b8c, 5%);
+	}
+}
+
+@include media-breakpoint-up(lg) {
+	.navbar .d-mobile { display: none }
+}

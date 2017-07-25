@@ -1,0 +1,25 @@
+
+.flex {
+	display: flex;
+}
+
+.vertical {
+	flex-direction: column;
+}
+
+.centered-x {
+	justify-content: center;
+}
+
+.centered-y {
+	align-items: center;
+}
+
+.centered {
+	@extend .centered-y;
+	@extend .centered-x;
+}
+
+.icon {
+	line-height: 0;
+}
