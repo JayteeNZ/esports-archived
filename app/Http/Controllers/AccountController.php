@@ -1,8 +1,8 @@
 <?php
 
-namespace Parallel\Http\Controllers;
+namespace App\Http\Controllers;
 
-use Parallel\User;
+use App\User;
 
 class AccountController extends Controller
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Parallel;
+namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -8,12 +8,11 @@ class Tournament extends Model
 {
 	public static function retrieve()
 	{
-		return static::all();
+		return self::all();
 	}
 
-	public function getAssociatedUSer()
+	public function game()
 	{
-		return Controller::where('id', 1);
+		return $this->belongsTo(Game::class);
 	}
-
 }

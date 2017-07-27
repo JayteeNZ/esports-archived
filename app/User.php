@@ -1,13 +1,14 @@
 <?php
 
-namespace Parallel;
+namespace App;
 
+use Laratrust\Traits\LaratrustUserTrait;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, LaratrustUserTrait;
 
     /**
      * The attributes that are mass assignable.
@@ -15,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'first_name', 'last_name', 'username', 'email', 'password',
     ];
 
     /**
@@ -26,4 +27,23 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * Check if a user has a permission by itself or a role with the permission.
+     * 
+     * @param  string
+     * @return boolean
+     */
+    public function hasPermissionOrRoleHasPermission($permission)
+    {
+        if ($this->roles->count() && $this->roles->each->hasPermission($permission)) {
+            return true;
+        }
+
+        if ($this->hasPermission($permission)) {
+            return true;
+        }
+
+        return false;
+    }
 }

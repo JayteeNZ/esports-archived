@@ -1,8 +1,8 @@
 <?php
 
-namespace Parallel\Http\Controllers\Dashboard;
+namespace App\Http\Controllers\Dashboard;
 
-use Parallel\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {

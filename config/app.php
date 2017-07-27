@@ -168,15 +168,16 @@ return [
          */
         BladeSvg\BladeSvgServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
+        Laratrust\LaratrustServiceProvider::class,
 
         /*
          * Application Service Providers...
          */
-        Parallel\Providers\AppServiceProvider::class,
-        Parallel\Providers\AuthServiceProvider::class,
-        // Parallel\Providers\BroadcastServiceProvider::class,
-        Parallel\Providers\EventServiceProvider::class,
-        Parallel\Providers\RouteServiceProvider::class,
+        App\Providers\AppServiceProvider::class,
+        App\Providers\AuthServiceProvider::class,
+        // App\Providers\BroadcastServiceProvider::class,
+        App\Providers\EventServiceProvider::class,
+        App\Providers\RouteServiceProvider::class,
 
     ],
 

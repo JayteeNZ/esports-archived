@@ -1,7 +1,9 @@
 <?php
 
-namespace Parallel\Providers;
+namespace App\Providers;
 
+use Blade;
+use Reflex\Challonge\Challonge;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -13,7 +15,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Blade::directive('access', function ($permission) {
+            return "<?php if (auth()->user()->hasPermissionOrRoleHasPermission($permission)): ?>";
+        });
+
+        Blade::directive('endaccess', function () {
+            return "<?php endif; ?>";
+        });
     }
 
     /**
@@ -23,6 +31,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind('Challonge', function ($app) {
+            return new Challonge($app['config']['services.challonge.key']);
+        });
     }
 }

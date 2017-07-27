@@ -1,0 +1,7 @@
+
+Find a fix for the Laratrust Command issue when running live.
+Perhaps just make a pull request or upload own version to Packagist.
+
+Change .env variables
+
+Minify and Compile assets

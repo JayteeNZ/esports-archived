@@ -30,9 +30,14 @@ return [
     ],
 
     'stripe' => [
-        'model' => Parallel\User::class,
+        'model' => App\User::class,
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
 
+    'challonge' => [
+        'key' => env('CHALLONGE_KEY'),
+        'url' => env('CHALLONGE_URL'),
+        'subdomain' => env('CHALLONGE_SUBDOMAIN')
+    ]
 ];

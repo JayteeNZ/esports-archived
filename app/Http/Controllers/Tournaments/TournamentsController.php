@@ -1,9 +1,9 @@
 <?php
 
-namespace Parallel\Http\Controllers\Tournaments;
+namespace App\Http\Controllers\Tournaments;
 
-use Parallel\Tournament;
-use Parallel\Http\Controllers\Controller;
+use App\Tournament;
+use App\Http\Controllers\Controller;
 
 class TournamentsController extends Controller
 {

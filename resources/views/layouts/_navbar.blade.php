@@ -29,10 +29,15 @@
 				@if (auth()->check())
 					<div class="dropdown">
 						<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-							{{ auth()->user()->name }}
+							{{ auth()->user()->username }}
 						</a>
 						<div class="dropdown-menu">
 							<a href="/{{ '@' . auth()->id() }}" class="dropdown-item">Profile</a>
+							
+							@access('access-dashboard')
+								<a href="/dashboard" class="dropdown-item">Dashboard</a>
+							@endaccess
+
 							<a href="{{ route('logout') }}" class="dropdown-item">Logout</a>
 						</div>
 					</div>

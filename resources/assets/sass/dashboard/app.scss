@@ -1,0 +1,37 @@
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "node_modules/bootstrap-v4-master/scss/bootstrap";
+
+.sidebar {
+	width: $sidebar-width;
+	background: $sidebar-background;
+	min-height: 100vh;
+	overflow-y: scroll;
+	display: flex;
+	flex-direction: column;
+}
+
+.sidebar .section {
+	margin-bottom: 1.4rem;	
+}
+
+.section .title {
+	font-size: 12px;
+	text-transform: uppercase;
+	color: lighten($sidebar-background, 15%);
+	padding: .2rem 2rem;
+	font-weight: 500;
+}
+
+.section a {
+	display: flex;
+	width: 100%;
+	padding: .6rem 2rem;
+	color: #757b8c;
+
+	&:hover {
+		text-decoration: none;
+	}
+}
