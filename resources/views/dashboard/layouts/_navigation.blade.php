@@ -40,7 +40,14 @@
                 <ul>
                     <li><a href="/dashboard/games">View all</a></li>
                     <li><a href="/dashboard/games/create">Publish New Game</a></li>
-                    <li><a href="/dashboard/games">Rulesets</a></li>
+                </ul>
+            </li>
+            <li class="navigation__sub">
+                <a href="#" data-mae-action="submenu-toggle"><i class="zmdi zmdi-view-list"></i> Rulesets</a>
+                <ul>
+                    <li><a href="/dashboard/rulesets">View all</a></li>
+                    <li><a href="/dashboard/rulesets/create">New Ruleset</a></li>
+                    <li><a href="/dashboard/mastersets">Mastersets</a></li>
                 </ul>
             </li>
             <li class="navigation__sub">

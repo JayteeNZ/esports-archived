@@ -19,9 +19,11 @@
 
         <!-- Full Calendar -->
         <link href="/admin/css/vendors/fullcalendar.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="/admin/css/vendors/bootstrap-datetimepicker.min.css">
 
         <!-- Site CSS -->
         <link href="/admin/css/mae.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="/admin/css/app.css">
 
         <!-- Page loader -->
         <script src="/admin/js/page-loader.min.js"></script>
@@ -61,7 +63,9 @@
             @include('dashboard.layouts._navigation')
 
             <section id="content">
-                @yield('content')
+                <div id="dashboard">
+                    @yield('content')
+                </div>
             </section>
 
             <footer id="footer">
@@ -82,6 +86,7 @@
 
         <!-- jQuery -->
         <script src="/admin/js/vendors/jquery.min.js"></script>
+        <script src="/admin/js/app.js"></script>
 
         <!-- Bootstrap -->
         <script src="/admin/js/vendors/bootstrap.min.js"></script>
@@ -93,7 +98,7 @@
         <script src="vendors/bower_components/remarkable-bootstrap-notify/dist/bootstrap-notify.min.js"></script>
 
         <!-- Moment -->
-        <script src="vendors/bower_components/moment/min/moment.min.js"></script>
+        <script src="/admin/js/vendors/moment.min.js"></script>
 
         <!-- FullCalendar -->
         <script src="vendors/bower_components/fullcalendar/dist/fullcalendar.min.js"></script>
@@ -116,15 +121,16 @@
         <script src="vendors/bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js"></script>
 
         <!-- Demo Only -->
-        <script src="demo/js/flot-charts/curved-line.js"></script>
+        {{-- <script src="demo/js/flot-charts/curved-line.js"></script>
         <script src="demo/js/flot-charts/line.js"></script>
         <script src="demo/js/easy-pie-charts.js"></script>
         <script src="demo/js/misc.js"></script>
         <script src="demo/js/sparkline-charts.js"></script>
-        <script src="demo/js/calendar.js"></script>
-
-        <script src="/admin/js/app.js"></script>
+        <script src="demo/js/calendar.js"></script> --}}
+        <script src="/admin/js/vendors/bootstrap-datetimepicker.min.js"></script>
         <!-- Site Functions & Actions -->
+
         <script src="/admin/js/mae.min.js"></script>
+
     </body>
 </html>

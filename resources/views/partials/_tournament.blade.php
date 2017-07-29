@@ -12,9 +12,9 @@
         </h3>
         <div class="text-light-muted font-sm letter-spacing text-uppercase d-inline-flex justify-content-between">
             <div>
-                <span>INFINITE WARFARE</span>
+                <span>{{ $tournament->game->display_name }}</span>
                 &mdash;
-                <span class="font-xs">Aug 1, 5:00pm</span>
+                <span class="font-xs">{{ $tournament->starts_at->format('jS M h:i a') }}</span>
             </div>
         </div>
     </div>

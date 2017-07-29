@@ -32,7 +32,7 @@
 							{{ auth()->user()->username }}
 						</a>
 						<div class="dropdown-menu">
-							<a href="/{{ '@' . auth()->id() }}" class="dropdown-item">Profile</a>
+							<a href="{{ route('profile', auth()->user()) }}" class="dropdown-item">Profile</a>
 							
 							@access('access-dashboard')
 								<a href="/dashboard" class="dropdown-item">Dashboard</a>

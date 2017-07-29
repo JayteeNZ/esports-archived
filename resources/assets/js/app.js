@@ -15,8 +15,13 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+Vue.component('search-filter', require('./components/SearchFilter.vue'));
+Vue.component('tournament', require('./components/Tournament.vue'));
+Vue.component('tournaments', require('./components/Tournaments.vue'));
+Vue.component('register-team', require('./components/RegisterTeam.vue'));
+
 const app = new Vue({
-    el: '#application'
+    el: '#app',
 });
 
 $('[data-toggle="off-canvas"]').on('click', function () {

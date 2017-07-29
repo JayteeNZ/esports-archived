@@ -4,21 +4,21 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 
-class TestCommand extends Command
+class CheckTournamentCommand extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'command:name';
+    protected $signature = 'check:tournament';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Checks to see if tournaments should be started';
 
     /**
      * Create a new command instance.
@@ -37,6 +37,11 @@ class TestCommand extends Command
      */
     public function handle()
     {
-        //
+        $tournaments = \App\Tournament::where('status', 'scheduled')->get();
+        foreach($tournaments as $tournament) {
+            if ($tournament->starts_at->lte(\Carbon\Carbon::now())) {
+                // event(TournamentHasStarted::class);
+            }
+        }
     }
 }

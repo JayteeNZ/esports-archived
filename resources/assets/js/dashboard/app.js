@@ -1,3 +1,35 @@
+
+/**
+ * First we will load all of this project's JavaScript dependencies which
+ * includes Vue and other libraries. It is a great starting point when
+ * building robust, powerful web applications using Vue and Laravel.
+ */
+
+require('./bootstrap');
+
+window.Vue = require('vue');
+
+require('./trumbowyg.js');
+
+/**
+ * Next, we will create a fresh Vue application instance and attach it to
+ * the page. Then, you may begin adding components to this application
+ * or customize the JavaScript scaffolding to fit your unique needs.
+ */
+
+Vue.component('create-tournament', require('./components/tournaments/CreateTournament.vue'));
+Vue.component('basic-information', require('./components/tournaments/BasicInformation.vue'));
+Vue.component('bracket-settings', require('./components/tournaments/BracketSettings.vue'));
+Vue.component('schedule', require('./components/tournaments/Schedule.vue'));
+Vue.component('publication', require('./components/tournaments/Publication.vue'));
+Vue.component('team-settings', require('./components/tournaments/TeamSettings.vue'));
+Vue.component('tournament-settings', require('./components/tournaments/TournamentSettings.vue'));
+Vue.component('create-tournament', require('./components/tournaments/CreateTournament.vue'));
+
+new Vue({
+    el: '#dashboard',
+});
+
 'use strict';
 
 $(document).ready(function(){
@@ -206,4 +238,21 @@ $(document).ready(function () {
             sliceColors: ['#b4bfc3', '#edeff0', 'rgba(177, 188, 192, 0.47)', 'rgba(177, 188, 192, 0.1)']
         });
     }
+});
+
+$('.date-time-picker').datetimepicker({
+    format: 'YYYY-MM-DD HH:mm:ss',
+    icons: {
+        time: "zmdi zmdi-time",
+        date: "zmdi zmdi-calendar",
+        up: "zmdi zmdi-chevron-up",
+        down: "zmdi zmdi-chevron-down",
+        previous: "zmdi zmdi-chevron-left",
+        next: "zmdi zmdi-chevron-right",
+        today: "zmdi zmdi-screenshot",
+        clear: "zmdi zmdi-trash",
+        close: "zmdi zmdi-times"
+    },
+    useCurrent: false,
+    default: moment().minute(0).second(0)
 });

@@ -5,7 +5,7 @@
 	<div class="card__body">
 		<div class="form-group">
 			<label>Name</label>
-			<input type="text" name="name" class="form-control">
+			<input type="text" name="name" class="form-control" v-model="data.name">
 		</div>
 	</div>
 </div>

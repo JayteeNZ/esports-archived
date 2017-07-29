@@ -46,4 +46,20 @@ class User extends Authenticatable
 
         return false;
     }
+
+    public function getRouteKeyName()
+    {
+        return 'username';
+    }
+
+    public function teams()
+    {
+        return $this->hasMany(Team::class)->withPivot(['status', 'position'])
+            ->withTimestamps();
+    }
+
+    public function hasTeam($tournament)
+    {
+        return true;
+    }
 }

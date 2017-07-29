@@ -1,6 +1,21 @@
 
 .form-control {
-	padding: .7rem 1rem;
 	font-size: 1rem;
-	letter-spacing: .7px;
+	color: #333;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	font-size: 14px;
+	background-color: #fff;
+	background-image: none;
+}
+
+label {
+	font-size: 14px;
+	color: #333;
+}
+
+.form-control-dark {
+	@extend .form-control;
+	background-color: darken($brand-primary, 5%);
+	border: 1px solid #131313;
 }

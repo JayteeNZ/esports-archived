@@ -1,18 +1,15 @@
 <?php
 
+use App\Tournament;
 use Illuminate\Http\Request;
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
-|
-*/
+Route::post('/teams/validate', function (Request $request) {
+	
+	$tournament = Tournament::findOrFail(request('tournament')['id']);
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+	if (!$tournament->hasTeamByName(request('name'))) {
+		return response('', 200);
+	}
+
+	return response(['errors' => ['This Team name already exists']], 422);
 });

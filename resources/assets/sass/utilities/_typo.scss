@@ -22,3 +22,22 @@
 @include media-breakpoint-down(md) {
 	h2.scale-mobile { font-size: 1.625rem; }
 }
+
+.large {
+	font-size: 1.8rem;
+}
+
+.large-text {
+	font-size: 1.2rem;
+	-webkit-font-smoothing: antialiased;
+}
+
+@include media-breakpoint-up(md) {
+	.large {
+		font-size: 5rem;
+	}
+}
+
+.antialiased {
+	-webkit-font-smoothing: antialiased;
+}

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Tournaments;
 
+use App\Platform;
 use App\Tournament;
 use App\Http\Controllers\Controller;
 
@@ -12,8 +13,12 @@ class TournamentsController extends Controller
 	 */
 	public function index()
 	{
-		$tournaments = Tournament::retrieve();
-		return view('tournaments.index', compact('tournaments'));
+		$tournaments = Tournament::whereScheduledOrStarted()->orderBy('starts_at', 'asc')
+			->limit(30)->get();
+
+		$platforms = Platform::all();
+
+		return view('tournaments.index', compact('platforms', 'tournaments'));
 	}
 
 	/**

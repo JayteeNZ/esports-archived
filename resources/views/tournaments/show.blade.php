@@ -11,6 +11,9 @@
         <a href="#ruleset" class="tab" data-toggle="tab">Ruleset</a>
         <a href="#teams" class="tab" data-toggle="tab">Teams</a>
         <a href="#matches" class="tab" data-toggle="tab">Matches</a>
+        @if (! auth()->user()->hasTeam($tournament))
+            <a href="/tournament/{{ $tournament->id }}/teams/create" class="tab">Signup</a>
+        @endif
     </nav>
 @stop
 

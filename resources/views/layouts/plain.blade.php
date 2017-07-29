@@ -13,12 +13,13 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link rel="icon" href="/icon.ico" sizes="16x16 24x24 32x32 48x48 64x64 96x96 128x128 192x192 256x256">
     </head>
-    <body class="theme-light">
-
-        <div id="application">
-            @yield('body')
-        </div>
-        
-        <script src="{{ asset('js/app.js') }}"></script>
+    <body class="{{ isset($body) ? $body : '' }}">
+		<div id="app">
+			<div class="content-wrapper">
+				@yield('content')
+			</div>
+		</div>		
+		
+		<script src="{{ asset('js/app.js') }}"></script>
     </body>
 </html>
