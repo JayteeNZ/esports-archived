@@ -18,9 +18,9 @@
     <div class="navigation__menu c-overflow">
         <ul>
             <li class="navigation__active"><a href="{{ route('dashboard') }}"><i class="zmdi zmdi-home"></i> Dashboard</a></li>
-            <li><a href="{{ route('home') }}"><i class="zmdi zmdi-format-underlined"></i>Parallel</a></li>
+            <li><a href="{{ route('home') }}"><i class="zmdi zmdi-http"></i>Parallel</a></li>
             <li class="navigation__sub">
-                <a href="" data-mae-action="submenu-toggle"><i class="zmdi zmdi-view-list"></i>Content Creation</a>
+                <a href="" data-mae-action="submenu-toggle"><i class="zmdi zmdi-globe-lock"></i>Content Creation</a>
                 <ul>
                     <li><a href="tables.html">Sponsors</a></li>
                     <li><a href="data-tables.html">Meta Data</a></li>
@@ -28,41 +28,38 @@
                 </ul>
             </li>
             <li class="navigation__sub">
-                <a href="#" data-mae-action="submenu-toggle"><i class="zmdi zmdi-view-list"></i>Tournaments</a>
+                <a href="#" data-mae-action="submenu-toggle"><i class="zmdi zmdi-device-hub"></i>Tournaments</a>
                 <ul>
                     <li><a href="/dashboard/tournaments">View all</a></li>
-                    <li><a href="/dashboard/tournaments/create">Publish New Tournament</a></li>
+                    <li><a href="/dashboard/tournaments/create">Create</a></li>
                     <li><a href="/dashboard/tournaments?filter=scheduled">Scheduled</a></li>
                 </ul>
             </li>
             <li class="navigation__sub">
-                <a href="#" data-mae-action="submenu-toggle"><i class="zmdi zmdi-view-list"></i> Game Settings</a>
+                <a href="#" data-mae-action="submenu-toggle"><i class="zmdi zmdi-gamepad"></i> Game Settings</a>
                 <ul>
                     <li><a href="/dashboard/games">View all</a></li>
                     <li><a href="/dashboard/games/create">Publish New Game</a></li>
                 </ul>
             </li>
             <li class="navigation__sub">
-                <a href="#" data-mae-action="submenu-toggle"><i class="zmdi zmdi-view-list"></i> Rulesets</a>
+                <a href="#" data-mae-action="submenu-toggle"><i class="zmdi zmdi-border-color"></i> Rulesets</a>
                 <ul>
                     <li><a href="/dashboard/rulesets">View all</a></li>
                     <li><a href="/dashboard/rulesets/create">New Ruleset</a></li>
-                    <li><a href="/dashboard/mastersets">Mastersets</a></li>
                 </ul>
             </li>
             <li class="navigation__sub">
-                <a href="#" data-mae-action="submenu-toggle"><i class="zmdi zmdi-view-list"></i>Global</a>
+                <a href="#" data-mae-action="submenu-toggle"><i class="zmdi zmdi-globe"></i>Global</a>
                 <ul>
                     <li><a href="/dashboard/platforms">Platforms</a></li>
-                    <li><a href="#">Regions</a></li>
                 </ul>
             </li>
             <li class="navigation__sub">
-                <a href="" data-mae-action="submenu-toggle"><i class="zmdi zmdi-view-list"></i>Authorization</a>
+                <a href="#" data-mae-action="submenu-toggle"><i class="zmdi zmdi-account-add"></i>Authorization</a>
                 <ul>
-                    <li><a href="tables.html">Teams</a></li>
-                    <li><a href="data-tables.html">Roles</a></li>
-                    <li><a href="data-tables.html">Permissions</a></li>
+                    <li><a href="/dashboard/authorization/roles">Roles</a></li>
+                    <li><a href="/dashboard/authorization/permissions">Permissions</a></li>
                 </ul>
             </li>
         </ul>

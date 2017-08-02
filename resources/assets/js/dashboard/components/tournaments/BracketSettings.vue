@@ -14,10 +14,10 @@
 		</div>
 		<div class="form-group">
 			<label>Number of Rounds</label>
-			<select class="form-control" name="rounds" v-model="rounds">
-				<option value="3">3 Rounds (16 Teams)</option>
-				<option value="4">4 Rounds (32 Teams)</option>
-				<option value="5">5 Rounds (64 Teams)</option>
+			<select class="form-control" name="teams_per_bracket" v-model="rounds">
+				<option value="16">4 Rounds (16 Teams)</option>
+				<option value="32">5 Rounds (32 Teams)</option>
+				<option value="64">6 Rounds (64 Teams)</option>
 			</select>
 		</div>
 	</div>

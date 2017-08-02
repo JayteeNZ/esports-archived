@@ -4,23 +4,12 @@
 		<div class="collapse navbar-collapse navbar-collapse--sidebar" id="navbar-primary">
 			<div class="navbar-nav mr-auto">
 				<a href="/" class="nav-link {{ active('/') }}">
-					<span class="d-mobile">@svg('home')</span>
 					Home
 				</a>
 				<a href="/tournaments" class="nav-link {{ active('tournaments') }}">
-					<span class="d-mobile">@svg('trophy')</span>
 					Tournaments
 				</a>
 				<a href="/tournaments" class="nav-link">
-					<span class="d-mobile">@svg('chat-bubble-dots')</span>
-					Forum
-				</a>
-				<a href="/tournaments" class="nav-link">
-					<span class="d-mobile">@svg('wallet')</span>
-					Shop
-				</a>
-				<a href="/tournaments" class="nav-link">
-					<span class="d-mobile">@svg('information-outline')</span>
 					Support
 				</a>
 			</div>
@@ -34,9 +23,9 @@
 						<div class="dropdown-menu">
 							<a href="{{ route('profile', auth()->user()) }}" class="dropdown-item">Profile</a>
 							
-							@access('access-dashboard')
+							@ability('staff', 'access.dashboard')
 								<a href="/dashboard" class="dropdown-item">Dashboard</a>
-							@endaccess
+							@endability
 
 							<a href="{{ route('logout') }}" class="dropdown-item">Logout</a>
 						</div>

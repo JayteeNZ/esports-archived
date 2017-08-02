@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Platform extends Model
 {
     protected $fillable = [
-    	'name', 'visible', 'slug'
+    	'name', 'visible', 'slug', 'display_name'
     ];
 
     public function scopeVisible($query)

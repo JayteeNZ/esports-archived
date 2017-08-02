@@ -8,8 +8,12 @@ class Role extends LaratrustRole
 {
 	protected $fillable = ['name', 'display_name', 'description', 'visible'];
 
-	public function isVisible()
+	protected $casts = [
+		'visible' => 'boolean'
+	];
+
+	public function setDescriptionAttribute($value)
 	{
-		return !! $this->visible;
+		return nl2br($value);
 	}
 }

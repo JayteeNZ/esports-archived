@@ -22,6 +22,7 @@ class PlatformsController extends Controller
 	{
 		$data = request()->validate([
 			'name' => 'required',
+			'display_name' => 'required',
 			'slug' => 'required|unique:platforms,slug',
 			'visible' => 'boolean'
 		]);

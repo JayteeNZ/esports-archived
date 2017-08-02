@@ -5,4 +5,17 @@ footer {
 	left: 0;
 	width: 100%;
 	background: $brand-primary;
+	padding: 3rem;
+}
+
+footer h5 {
+	font-size: 1.2rem;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	color: #fff;
+}
+
+footer a {
+	display: block;
+	color: #757b8c;
 }

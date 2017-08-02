@@ -13,7 +13,7 @@ class TournamentsController extends Controller
 	 */
 	public function index()
 	{
-		$tournaments = Tournament::whereScheduledOrStarted()->orderBy('starts_at', 'asc')
+		$tournaments = Tournament::whereScheduledOrCommenced()->orderBy('starts_at', 'asc')
 			->limit(30)->get();
 
 		$platforms = Platform::all();

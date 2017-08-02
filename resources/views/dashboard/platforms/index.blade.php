@@ -45,6 +45,13 @@
 								<span class="help-block">{{ $errors->first('name') }}</span>
 							@endif
 						</div>
+						<div class="form-group {{ $errors->has('display_name') ? 'has-error': '' }}">
+							<label>Display Name</label>
+							<input type="text" name="display_name" class="form-control">
+							@if ($errors->has('display_name'))
+								<span class="help-block">{{ $errors->first('display_name') }}</span>
+							@endif
+						</div>
 						<div class="form-group {{ $errors->has('slug') ? 'has-error': '' }}">
 							<label>Slug</label>
 							<input type="text" name="slug" class="form-control">

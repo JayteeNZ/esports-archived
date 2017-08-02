@@ -9,6 +9,10 @@
 		<search-filter :data="{{ $platforms }}"></search-filter>
 	</div>
 	<div class="container">
-		<tournaments :data="{{ $tournaments }}"></tournaments>
+		@if ($tournaments->count())
+			<tournaments :data="{{ $tournaments }}"></tournaments>
+		@else
+			<p>Sorry, there are no Tournaments scheduled. Please check back later.</p>
+		@endif
 	</div>
 @endsection

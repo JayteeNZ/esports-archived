@@ -30,7 +30,7 @@
 		top: 0;
 		left: 0;
 		bottom: 0;
-		width: 280px;
+		width: 260px;
 		margin: 0;
 		padding: 2rem 1rem;
 		overflow-y: auto;
@@ -51,7 +51,7 @@
 
 	.navbar .navbar-collapse--sidebar {
 		background: darken($brand-primary, 2%);
-		border-right: 1px solid black;
+		box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 3px 4px rgba(0, 0, 0, .42);
 	}
 
 	.navbar-expand-lg .navbar-nav .nav-link {
@@ -109,7 +109,7 @@
 	vertical-align: middle;
 	padding-right: .8rem;
 	& svg {
-		height: 25px;
+		height: 20px;
 		fill: lighten(#757b8c, 5%);
 	}
 }

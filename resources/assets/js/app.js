@@ -15,21 +15,21 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+
 Vue.component('search-filter', require('./components/SearchFilter.vue'));
 Vue.component('tournament', require('./components/Tournament.vue'));
 Vue.component('tournaments', require('./components/Tournaments.vue'));
-Vue.component('register-team', require('./components/RegisterTeam.vue'));
+Vue.component('autocomplete', require('./components/AutoComplete.vue'));
 
-const app = new Vue({
-    el: '#app',
+let app = new Vue({
+	el: '#app'
 });
 
 $('[data-toggle="off-canvas"]').on('click', function () {
 	let attribute = $('.navbar').find($(this).attr('data-target'));
 	let	e = attribute.hasClass('collapse');
 
-	console.log(attribute);
-
 	attribute[ (e ? 'remove' : 'add') + 'Class' ]('collapse'),
 		$('.navbar')[ (e ? 'add' : 'remove') + 'Class' ]('is-open');
 });
+

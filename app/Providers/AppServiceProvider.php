@@ -3,7 +3,6 @@
 namespace App\Providers;
 
 use Blade;
-use Reflex\Challonge\Challonge;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -31,8 +30,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('Challonge', function ($app) {
-            return new Challonge($app['config']['services.challonge.key']);
-        });
+        
     }
 }

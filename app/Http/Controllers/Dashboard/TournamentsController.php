@@ -37,7 +37,7 @@ class TournamentsController extends Controller
 			'ruleset_id' => 'required|numeric',
 			'game_id' => 'required|numeric',
 			'format' => 'required',
-			'rounds' => 'required',
+			'teams_per_bracket' => 'required',
 			'starts_at' => 'required',
 			'visibility' => 'numeric|required'
 		]);

@@ -1,39 +1,33 @@
 @extends('layouts.app')
 
 @section('page-header')
-    
-    <!-- Page Cover -->
-    @include('tournaments.partials.cover-show')
-
-    <!-- Page Navigation -->
-    <nav class="tabs-underlined centered">
-        <a href="#information" class="tab active" data-toggle="tab">Information</a>
-        <a href="#ruleset" class="tab" data-toggle="tab">Ruleset</a>
-        <a href="#teams" class="tab" data-toggle="tab">Teams</a>
-        <a href="#matches" class="tab" data-toggle="tab">Matches</a>
-        @if (! auth()->user()->hasTeam($tournament))
-            <a href="/tournament/{{ $tournament->id }}/teams/create" class="tab">Signup</a>
-        @endif
-    </nav>
+    @include('tournaments.partials._tournament-header')
 @stop
 
 @section('content')
     <div class="container clears-nav">
-        <div class="tab-content">
-            <div class="tab-pane fade active show" id="information">
-                @include('tournaments.pages.information')
-            </div>
-            <!-- Tournament Ruleset -->
-            <div class="tab-pane fade" id="ruleset">
-                @include('tournaments.pages.ruleset')
-            </div>
-            <!-- Tournament Teams -->
-            <div class="tab-pane fade" id="teams">
-                @include('tournaments.pages.teams')
-            </div>
-            <!-- Tournament Matches -->
-            <div class="tab-pane fade" id="matches">
-                @include('tournaments.pages.matches')
+        <div class="row">
+            <div class="col-md-8">
+                <section class="content-block">
+                    <h3>Schedule</h3>
+                    <table class="table">
+                        @for ($i = 1; $i <= $tournament->getRounds(); $i++)
+                        <tr>
+                            <th>Round {{ $i }}</th>
+                            <td>{{ $tournament->starts_at->addHours($i - 1)->format('h:i A') }}</td>
+                        </tr>
+                        @endfor
+                    </table>
+                </section>
+                <section class="content-block">
+                    <h3>Support</h3>
+                    <p>
+                        If you require support for your match, you may send us a message via our Live Support system. Please provide your Match ID on request.
+                    </p>
+                    <p>
+                        For all other enquiries, please Email us: <em>support@playparallel.com</em>
+                    </p>
+                </section>
             </div>
         </div>
     </div>

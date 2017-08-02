@@ -3,7 +3,7 @@
 	    <div class="tournament-image" :style="background">
 	        <div class="overlay-dark-soft"></div>
 	        <div class="tags">
-	            <span class="badge badge-purple">{{ data.platform.name }}</span>
+	            <span class="badge badge-purple">{{ data.platform.display_name }}</span>
 	            <span class="badge badge-purple">{{ data.game.display_name }}</span>
 	        </div>
 	    </div>

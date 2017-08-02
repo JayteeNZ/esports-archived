@@ -2,6 +2,10 @@
 
 namespace App\Providers;
 
+use App\Tournament;
+use App\User;
+use App\Policies\UserPolicy;
+use App\Policies\TournamentPolicy;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
@@ -13,7 +17,8 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        'App\Model' => 'App\Policies\ModelPolicy',
+        Tournament::class => TournamentPolicy::class,
+        User::class => UserPolicy::class
     ];
 
     /**

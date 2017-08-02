@@ -1,4 +1,44 @@
 
-.card.card-dark {
-	background: darken($brand-primary, 3%);
+.card-header {
+	background: darken(#fff, 1%);
+	border-color: darken(#fff, 3%);
+	padding: 1rem 1.2rem;
+	background: none;
+	font-size: 1.2rem;
+	color: $text-dark-soft;
+	font-weight: 400;
+}
+
+.card-block {
+	padding: 1rem 1.4rem;
+}
+
+.card-footer {
+	border: none;
+	background: darken(#fff, 1%);
+}
+
+.card .list-group-item {
+	border: 1px solid darken(#fff, 3%);
+	padding: .9rem 1.2rem;
+	background: none;
+}
+
+.card-transparent,
+.card-transparent .card-header,
+.card-transparent .card-block,
+.card-transparent .card-footer,
+.card-transparent .list-group-flush,
+.card-transparent .list-group-item {
+	background: none;
+	border: none;
+	box-shadow: none;
+	padding-left: 0
+}
+
+.card-transparent .card-header {
+	font-weight: 500;
+	color: #444;
+	font-size: 1.2rem;
+	border-radius: 0;
 }

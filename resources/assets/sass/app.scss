@@ -8,6 +8,11 @@
 @import "utilities/utilities";
 @import "framework";
 
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
 .content {
 	padding-top: 3rem;
 	@include media-breakpoint-up(lg) {

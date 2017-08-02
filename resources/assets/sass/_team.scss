@@ -1,18 +1,30 @@
 
-.team-card {
-	width: 300px;
-	@include media-breakpoint-up(lg) {
-		width: 250px;
-	}
-	background: #fff;
-	border: 1px solid rgba(0, 0, 0, .10);
-	animation-name: fadeIn;
-	animation-duration: 2s;
-	margin: 0 auto;
-	margin-bottom: 2rem;
+.team-member__details {
+	display: flex;
+	flex-direction: column;
+	padding-right: 1rem;
 }
 
-.team-card .thumbnail img {
-	height: 200px;
-	width: 100%;
+.team-member__name {
+	font-size: 1.125rem;
+	color: $text-dark;
+}
+
+.team-member__position {
+	color: $text-dark-muted;
+	@extend .font-sm;
+}
+
+.team-card {
+	width: 250px;
+	margin-bottom: 3rem;
+}
+
+.team-card-body {
+	background: #fff;
+	padding: 1rem;
+}
+
+.team-card-actions .btn {
+	border-radius: 0;
 }

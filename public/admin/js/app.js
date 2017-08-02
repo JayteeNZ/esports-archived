@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 170);
+/******/ 	return __webpack_require__(__webpack_require__.s = 178);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -841,33 +841,6 @@ module.exports = Cancel;
 
 /***/ }),
 /* 9 */
-/***/ (function(module, exports) {
-
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1,eval)("this");
-} catch(e) {
-	// This works if the window reference is available
-	if(typeof window === "object")
-		g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
-/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -10959,9 +10932,10 @@ Vue$3.compile = compileToFunctions;
 
 module.exports = Vue$3;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(9)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(31)))
 
 /***/ }),
+/* 10 */,
 /* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12026,7 +12000,33 @@ module.exports = function spread(callback) {
 
 
 /***/ }),
-/* 31 */,
+/* 31 */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1,eval)("this");
+} catch(e) {
+	// This works if the window reference is available
+	if(typeof window === "object")
+		g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
 /* 32 */,
 /* 33 */,
 /* 34 */,
@@ -12149,9 +12149,9 @@ module.exports = function spread(callback) {
 var disposed = false
 var Component = __webpack_require__(2)(
   /* script */
-  __webpack_require__(175),
+  __webpack_require__(183),
   /* template */
-  __webpack_require__(176),
+  __webpack_require__(184),
   /* styles */
   null,
   /* scopeId */
@@ -12204,14 +12204,22 @@ module.exports = Component.exports
 /* 167 */,
 /* 168 */,
 /* 169 */,
-/* 170 */
+/* 170 */,
+/* 171 */,
+/* 172 */,
+/* 173 */,
+/* 174 */,
+/* 175 */,
+/* 176 */,
+/* 177 */,
+/* 178 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(171);
+module.exports = __webpack_require__(179);
 
 
 /***/ }),
-/* 171 */
+/* 179 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -12221,11 +12229,11 @@ module.exports = __webpack_require__(171);
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-__webpack_require__(172);
+__webpack_require__(180);
 
-window.Vue = __webpack_require__(10);
+window.Vue = __webpack_require__(9);
 
-__webpack_require__(173);
+__webpack_require__(181);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -12234,12 +12242,12 @@ __webpack_require__(173);
  */
 
 Vue.component('create-tournament', __webpack_require__(148));
-Vue.component('basic-information', __webpack_require__(177));
-Vue.component('bracket-settings', __webpack_require__(180));
-Vue.component('schedule', __webpack_require__(183));
-Vue.component('publication', __webpack_require__(186));
-Vue.component('team-settings', __webpack_require__(189));
-Vue.component('tournament-settings', __webpack_require__(192));
+Vue.component('basic-information', __webpack_require__(185));
+Vue.component('bracket-settings', __webpack_require__(188));
+Vue.component('schedule', __webpack_require__(191));
+Vue.component('publication', __webpack_require__(194));
+Vue.component('team-settings', __webpack_require__(197));
+Vue.component('tournament-settings', __webpack_require__(200));
 Vue.component('create-tournament', __webpack_require__(148));
 
 new Vue({
@@ -12459,7 +12467,7 @@ $('.date-time-picker').datetimepicker({
 });
 
 /***/ }),
-/* 172 */
+/* 180 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -12492,11 +12500,11 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 // });
 
 /***/ }),
-/* 173 */
+/* 181 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-__webpack_require__(174);
+__webpack_require__(182);
 
 $.trumbowyg.svgPath = '/admin/icons/trumbowyg.svg';
 
@@ -12505,7 +12513,7 @@ $(document).ready(function () {
 });
 
 /***/ }),
-/* 174 */
+/* 182 */
 /***/ (function(module, exports) {
 
 /**
@@ -14191,7 +14199,7 @@ jQuery.trumbowyg = {
 
 
 /***/ }),
-/* 175 */
+/* 183 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -14227,7 +14235,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 176 */
+/* 184 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -14248,15 +14256,15 @@ if (false) {
 }
 
 /***/ }),
-/* 177 */
+/* 185 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var Component = __webpack_require__(2)(
   /* script */
-  __webpack_require__(178),
+  __webpack_require__(186),
   /* template */
-  __webpack_require__(179),
+  __webpack_require__(187),
   /* styles */
   null,
   /* scopeId */
@@ -14288,7 +14296,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 178 */
+/* 186 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -14311,7 +14319,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
-/* 179 */
+/* 187 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -14342,15 +14350,15 @@ if (false) {
 }
 
 /***/ }),
-/* 180 */
+/* 188 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var Component = __webpack_require__(2)(
   /* script */
-  __webpack_require__(181),
+  __webpack_require__(189),
   /* template */
-  __webpack_require__(182),
+  __webpack_require__(190),
   /* styles */
   null,
   /* scopeId */
@@ -14382,7 +14390,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 181 */
+/* 189 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -14424,7 +14432,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 182 */
+/* 190 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -14479,7 +14487,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }],
     staticClass: "form-control",
     attrs: {
-      "name": "rounds"
+      "name": "teams_per_bracket"
     },
     on: {
       "change": function($event) {
@@ -14494,17 +14502,17 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('option', {
     attrs: {
-      "value": "3"
+      "value": "16"
     }
-  }, [_vm._v("3 Rounds (16 Teams)")]), _vm._v(" "), _c('option', {
+  }, [_vm._v("4 Rounds (16 Teams)")]), _vm._v(" "), _c('option', {
     attrs: {
-      "value": "4"
+      "value": "32"
     }
-  }, [_vm._v("4 Rounds (32 Teams)")]), _vm._v(" "), _c('option', {
+  }, [_vm._v("5 Rounds (32 Teams)")]), _vm._v(" "), _c('option', {
     attrs: {
-      "value": "5"
+      "value": "64"
     }
-  }, [_vm._v("5 Rounds (64 Teams)")])])])])])
+  }, [_vm._v("6 Rounds (64 Teams)")])])])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "card__header"
@@ -14519,15 +14527,15 @@ if (false) {
 }
 
 /***/ }),
-/* 183 */
+/* 191 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var Component = __webpack_require__(2)(
   /* script */
-  __webpack_require__(184),
+  __webpack_require__(192),
   /* template */
-  __webpack_require__(185),
+  __webpack_require__(193),
   /* styles */
   null,
   /* scopeId */
@@ -14559,7 +14567,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 184 */
+/* 192 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -14588,7 +14596,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 185 */
+/* 193 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -14619,15 +14627,15 @@ if (false) {
 }
 
 /***/ }),
-/* 186 */
+/* 194 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var Component = __webpack_require__(2)(
   /* script */
-  __webpack_require__(187),
+  __webpack_require__(195),
   /* template */
-  __webpack_require__(188),
+  __webpack_require__(196),
   /* styles */
   null,
   /* scopeId */
@@ -14659,7 +14667,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 187 */
+/* 195 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -14687,7 +14695,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
-/* 188 */
+/* 196 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -14734,15 +14742,15 @@ if (false) {
 }
 
 /***/ }),
-/* 189 */
+/* 197 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var Component = __webpack_require__(2)(
   /* script */
-  __webpack_require__(190),
+  __webpack_require__(198),
   /* template */
-  __webpack_require__(191),
+  __webpack_require__(199),
   /* styles */
   null,
   /* scopeId */
@@ -14774,7 +14782,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 190 */
+/* 198 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -14841,7 +14849,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 191 */
+/* 199 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -14911,15 +14919,15 @@ if (false) {
 }
 
 /***/ }),
-/* 192 */
+/* 200 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var Component = __webpack_require__(2)(
   /* script */
-  __webpack_require__(193),
+  __webpack_require__(201),
   /* template */
-  __webpack_require__(194),
+  __webpack_require__(202),
   /* styles */
   null,
   /* scopeId */
@@ -14951,7 +14959,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 193 */
+/* 201 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -14990,7 +14998,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 194 */
+/* 202 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

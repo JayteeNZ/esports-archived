@@ -13,7 +13,8 @@
         "laravel/tinker": "~1.0",
         "nothingworks/blade-svg": "^0.2.1",
         "santigarcor/laratrust": "4.0.*",
-        "team-reflex/challonge-php": "^1.0"
+        "team-reflex/challonge-php": "^1.0",
+        "uxweb/sweet-alert": "^1.4"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

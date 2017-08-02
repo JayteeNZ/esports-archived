@@ -2,18 +2,13 @@
     <div class="overlay-dark"></div>
     <div class="cover-inner">
         <div class="attached-bottom bg-black-semi-transparent py-4 px-4">
-            <div class="container d-flex flex-md-row flex-column justify-content-md-between">
+            <div class="container d-flex flex-md-row flex-column">
                 <div class="tournament-info">
                     <h2 class="mb-1 text-light scale-mobile">{{ $tournament->name }}</h2>
                     <div class="mb-0 text-dark-muted font-xs letter-spacing">
                         <a href="#" class="text-light-faint">{{ $tournament->game->display_name }}</a> on 
                         <a href="#" class="text-light-faint">{{ $tournament->platform->name }}</a>
                     </div>
-                </div>
-                <div class="align-self-md-center mt-3 mt-md-0">
-                    @if (auth()->check())
-                        <a href="/tournament/{{ $tournament->id }}/teams/create" class="btn btn-primary align-self-center" style="max-width: 120px">Register</a>
-                    @endif
                 </div>
             </div>
         </div>

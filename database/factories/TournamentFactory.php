@@ -24,10 +24,16 @@ $factory->define(App\Tournament::class, function (Faker $faker) {
         'max_teams' => 4,
         'players' => rand(1, 5),
         'subs' => rand(0, 2),
-        'platform_id' => rand(1, 2),
-        'ruleset_id' => 1,
-        'game_id' => 1,
-        'rounds' => 3,
+        'platform_id' => function () {
+            return factory(App\Platform::class)->create()->id;
+        },
+        'ruleset_id' => function () {
+            return factory(App\Ruleset::class)->create()->id;
+        },
+        'game_id' =>  function () {
+            return factory(App\Game::class)->create()->id;
+        },
+        'teams_per_bracket' => 16,
         'starts_at' => function () {
             $day = rand(1, 100);
             return Carbon::now()->addDays($day);

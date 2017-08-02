@@ -13,9 +13,27 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'App\Events\TournamentHasStarted' => [
-            'App\Listeners\CreateBrackets',
+        'App\Events\Tournaments\RegistrationClosed' => [
+            'App\Listeners\Tournaments\UpdateRegistrationAbility',
+            'App\Listeners\Tournaments\CreateBrackets'
         ],
+        'App\Events\Tournaments\BracketsCreated' => [
+            'App\Listeners\Tournaments\UpdateInternalBrackets',
+            'App\Listeners\Tournaments\AddParticipantsToBrackets',
+        ],
+        'App\Events\Tournaments\ParticipantsAddedToBracket' => [
+            'App\Listeners\Tournaments\UpdateInternalParticipants',
+            'App\Listeners\Tournaments\StartBrackets'
+        ],
+        'App\Events\Tournaments\BracketsStarted' => [
+            'App\Listeners\Tournaments\RetrieveMatches'
+        ],
+        'App\Events\Tournaments\MatchesRetrieved' => [
+            'App\Listeners\Tournaments\UpdateInternalMatches'
+        ],
+        'App\Events\Tournaments\TournamentStarted' => [
+            'App\Listeners\Tournaments\SetStatusToCommenced'
+        ]
     ];
 
     /**

@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Profile;
+use App\Tournament;
 use Laratrust\Traits\LaratrustUserTrait;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -28,23 +30,9 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    /**
-     * Check if a user has a permission by itself or a role with the permission.
-     * 
-     * @param  string
-     * @return boolean
-     */
-    public function hasPermissionOrRoleHasPermission($permission)
+    public function profile()
     {
-        if ($this->roles->count() && $this->roles->each->hasPermission($permission)) {
-            return true;
-        }
-
-        if ($this->hasPermission($permission)) {
-            return true;
-        }
-
-        return false;
+        return $this->hasOne(Profile::class);
     }
 
     public function getRouteKeyName()
@@ -54,12 +42,12 @@ class User extends Authenticatable
 
     public function teams()
     {
-        return $this->hasMany(Team::class)->withPivot(['status', 'position'])
+        return $this->belongsToMany(Team::class)->withPivot(['status', 'position'])
             ->withTimestamps();
     }
 
-    public function hasTeam($tournament)
+    public function hasTeam(Tournament $tournament)
     {
-        return true;
+        return !! $this->teams()->where('tournament_id', $tournament->id)->count();
     }
 }

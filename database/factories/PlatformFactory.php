@@ -17,6 +17,7 @@ $factory->define(App\Platform::class, function (Faker $faker) {
 	$name = $faker->name;
     return [
         'name' => $name,
+        'display_name' => strtoupper($name),
         'slug' => str_slug(strtolower($name)),
         'visible' => $faker->boolean
     ];

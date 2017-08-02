@@ -6,6 +6,21 @@
 	<div class="container pt-5">
 		<div class="row">
 			<div class="col-md-8 offset-md-2">
+				<section class="alert alert-info">
+					<strong>Update:</strong>
+					<p>Parallel suffered some major errors just before release. These errors caused the release to be delayed by 5 days as it uncovered a chain of events throughout the system. We expected this to happen during the release, however we did not intend for it to happen beforehand.</p>
+					<p>Because of this, some systems have been removed and will be added back over the next few days.</p>
+					<h5>Removed Features</h5>
+					<ul>
+						<li>All image uploading</li>
+						<li>Forum</li>
+					</ul>
+					<strong><em>On some pages, you will see a notice informing that the page is not complete. Expect these to be updated within 3 weeks</em></strong>
+					<p class="mt-3">We apologise for the 5 day delay, from hereonin, the website will be updated daily so please keep a lookout for new features and improvements. For any update we release, we'll create a release log. You may find Parallel to be slow at times, we are aware of this and will fix this within the next few days.</p>
+
+					<p>Starting from tomorrow (Thursday, 3rd August), Tournaments will begin.</p>
+					<p>Good luck in your first Tournament! <em>- Parallel Team</em></p>
+				</section>
 				<section class="pt-5 antialiased">
 					<h2 class="mb-4">Straight down to business</h2>
 					<p style="font-size: 20px">

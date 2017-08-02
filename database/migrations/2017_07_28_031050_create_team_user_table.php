@@ -17,8 +17,10 @@ class CreateTeamUserTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('team_id');
             $table->unsignedInteger('user_id');
-            $table->unsignedInteger('status')->default(0);
-            $table->integer('position')->default(0);
+            $table->unsignedInteger('status')->default(0); // 0 => invitation sent 1 => declined, 2 => accepted
+            $table->integer('position')->default(0); // 0 => member, 1 => substitute, 2 => captain, 3 => leader
+            $table->foreign('team_id')->references('id')->on('teams')
+                ->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

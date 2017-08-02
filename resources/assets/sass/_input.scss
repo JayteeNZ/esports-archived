@@ -1,12 +1,10 @@
 
 .form-control {
 	font-size: 1rem;
-	color: #333;
-	border: 1px solid #ddd;
 	border-radius: 3px;
-	font-size: 14px;
 	background-color: #fff;
 	background-image: none;
+    height: 48px;
 }
 
 label {
@@ -18,4 +16,27 @@ label {
 	@extend .form-control;
 	background-color: darken($brand-primary, 5%);
 	border: 1px solid #131313;
+}
+
+.transparent-input {
+        background: transparent;
+        border: none;
+        display: block;
+        width: 100%;
+        font-size: 2rem;
+        font-weight: 300;
+        color: #444;
+        -webkit-font-smoothing: antialiased;
+
+        &::placeholder {
+            color: #8f8f8f;
+        }
+
+        &:focus {
+            outline: none;
+        }
+}
+
+.transparent-input.small {
+    font-size: 1.4rem;
 }

@@ -16,7 +16,8 @@ class CreateTournamentsTable extends Migration
         Schema::create('tournaments', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('status')->default('scheduled');
+            $table->integer('status')->default(0);
+            $table->boolean('registration_status')->default(true);
             $table->integer('visibility')->default(2);
             $table->unsignedInteger('min_teams')->default(2);
             $table->unsignedInteger('max_teams')->nullable();
@@ -25,7 +26,7 @@ class CreateTournamentsTable extends Migration
             $table->unsignedInteger('platform_id');
             $table->unsignedInteger('game_id');
             $table->unsignedInteger('ruleset_id');
-            $table->unsignedInteger('rounds')->default(3);
+            $table->unsignedInteger('teams_per_bracket')->default(16);
             $table->dateTime('starts_at');
             $table->dateTime('finished')->nullable();
             $table->enum('format', ['single elimination', 'double elimination', 'round robin'])->default('single elimination');

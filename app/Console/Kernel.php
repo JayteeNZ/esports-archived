@@ -24,9 +24,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')
-        //          ->hourly();
-        $schedule->command('check:tournament')->everyMinute();
+        $schedule->command('parallel:close-registrations')->everyMinute()->withoutOverlapping();
+        $schedule->command('parallel:start-tournaments')->everyMinute()->withoutOverlapping();
     }
 
     /**

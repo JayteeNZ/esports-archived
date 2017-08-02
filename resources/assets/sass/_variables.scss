@@ -2,8 +2,6 @@
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500');
 @import url('https://fonts.googleapis.com/css?family=Poppins');
-@import url('https://fonts.googleapis.com/css?family=Rubik:400,500');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500');
 
 $brand-primary: #1e263d;
 $hue-brand-primary: hue($brand-primary);
@@ -38,15 +36,11 @@ $headings-color: $text-dark;
 // Inputs
 $input-color: $text-dark;
 $input-color-placeholder: $text-dark-muted;
-$input-border-color: #ddd;
-$input-border-focus: darken(#ddd, 10%);
+$input-border-color: darken(#fff, 12%);
+$input-border-focus: darken(#fff, 15%);
 
 // Buttons
 $btn-primary-bg: $purple;
-
-$input-btn-padding-x:       1.8rem;
-$input-btn-padding-y:       .6rem;
-$input-btn-line-height:     1.3;
 
 $btn-font-weight: 300;
 $btn-box-shadow: none;
