@@ -35,6 +35,13 @@ class ProfileController extends Controller
 				Rule::unique('profiles')->ignore($user->id, 'user_id'),
 				'nullable'
 			],
+			'location' => 'nullable',
+			'biography' => 'nullable',
+			'organisation' => 'nullable',
+			'motto' => 'nullable',
+			'social_twitter' => 'nullable',
+			'social_youtube' => 'nullable',
+			'account_steam' => 'nullable'
 		]);
 
 		$user->profile->update($data);
