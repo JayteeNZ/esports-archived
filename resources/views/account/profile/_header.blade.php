@@ -6,7 +6,7 @@
 <div class="container-sm">
 	<div class="profile__header d-flex align-items-center">
 		<div class="profile__avatar">
-			<a href="#"><img src="http://placehold.it/150x150"></a>
+			<a href="#"><img src="https://placehold.it/150x150"></a>
 		</div>
 		<div class="profile__info">
 			<h4 class="profile__name">{{ $user->username }}</h4>
