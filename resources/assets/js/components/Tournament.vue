@@ -10,7 +10,7 @@
 	    <div class="information">
 	        <h3 class="tournament-name text-dark"><a :href="url">{{ data.name }}</a></h3>
 	        <div class="text-light-muted font-sm letter-spacing text-uppercase">
-	            <span class="font-xs">{{ formattedDate }}</span>
+	            <span class="font-xs">{{ formattedDate }} NZT</span>
 	        </div>
 	    </div>
 	</div>
@@ -38,7 +38,7 @@
 
 			background() {
 				return {
-					'background-image': `url(${this.backgroundImage})`
+					'background-image': `url(${this.backgroundImage})`,
 				};
 			},
 

@@ -1,12 +1,10 @@
-<div class="profile-bg" style="background-color: #192b3c">
+<div class="profile-bg" style="background-image: url({{ $user->profile->cover() }});">
 	<div class="overlay-light"></div>
-	<div class="overlay-desktop"></div>
-	<div class="note" style="position: absolute; color: #fff; left: 40%; top: 40%">This feature is unavailable at this time.</div>
 </div>
 <div class="container-sm">
 	<div class="profile__header d-flex align-items-center">
 		<div class="profile__avatar">
-			<a href="#"><img src="https://placehold.it/150x150"></a>
+			<a href="#"><img src="{{ $user->profile->avatar() }}"></a>
 		</div>
 		<div class="profile__info">
 			<h4 class="profile__name">{{ $user->username }}</h4>

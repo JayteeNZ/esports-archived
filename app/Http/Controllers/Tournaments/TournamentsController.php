@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers\Tournaments;
 
-use App\Platform;
-use App\Tournament;
 use App\Http\Controllers\Controller;
+use App\Models\{Platform, Tournament};
 
 class TournamentsController extends Controller
 {
@@ -13,6 +12,7 @@ class TournamentsController extends Controller
 	 */
 	public function index()
 	{
+		// groupBy to enhance the starting days in the view???
 		$tournaments = Tournament::whereScheduledOrCommenced()->orderBy('starts_at', 'asc')
 			->limit(30)->get();
 

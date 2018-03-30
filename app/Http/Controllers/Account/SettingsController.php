@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Account;
 
-use Alert;
-use App\User;
+use App\Models\User;
+use Illuminate\Validation\Rule;
 use App\Http\Controllers\Controller;
 
 class SettingsController extends Controller
@@ -26,13 +26,21 @@ class SettingsController extends Controller
 		$data = request()->validate([
 			'first_name' => 'required',
 			'last_name' => 'required',
-			'email' => 'required|email',
-			'username' => 'required|alpha_num|unique:users'
+			'email' => [
+				Rule::unique('users')->ignore($user->id, 'id'),
+				'required',
+				'email'
+			],
+			'username' => [
+				Rule::unique('users')->ignore($user->id, 'id'),
+				'required',
+				'alpha_num'
+			],
 		]);
 
 		$user->update($data);
 
-		Alert::success('Updated your profile!', 'Done');
+		alert()->success('Updated your profile!', 'Done');
 		return redirect()->back();
 	}
 }

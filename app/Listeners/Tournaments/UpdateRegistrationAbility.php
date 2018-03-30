@@ -2,12 +2,10 @@
 
 namespace App\Listeners\Tournaments;
 
+use App\Models\{Bracket, Match, Team};
 use App\Events\Tournaments\RegistrationClosed;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use App\Bracket;
-use App\Match;
-use App\Team;
 
 class UpdateRegistrationAbility
 {

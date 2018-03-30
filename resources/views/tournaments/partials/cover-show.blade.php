@@ -7,7 +7,7 @@
                     <h2 class="mb-1 text-light scale-mobile">{{ $tournament->name }}</h2>
                     <div class="mb-0 text-dark-muted font-xs letter-spacing">
                         <a href="#" class="text-light-faint">{{ $tournament->game->display_name }}</a> on 
-                        <a href="#" class="text-light-faint">{{ $tournament->platform->name }}</a>
+                        <a href="#" class="text-light-faint">{{ $tournament->platform->display_name }}</a>
                     </div>
                 </div>
             </div>

@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use App\Tournament;
-use App\User;
+use App\Models\Account\User;
 use App\Policies\UserPolicy;
 use App\Policies\TournamentPolicy;
 use Illuminate\Support\Facades\Gate;
@@ -29,7 +29,5 @@ class AuthServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerPolicies();
-
-        //
     }
 }

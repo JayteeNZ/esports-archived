@@ -1,0 +1,12 @@
+
+.badge {
+	padding: .7em 1.2em;
+	margin-right: .4em;
+}
+
+.badge-purple {
+	color: #fff;
+	border-color: darken($purple, 10%);
+	background: $purple;
+	font-size: 1rem;
+}

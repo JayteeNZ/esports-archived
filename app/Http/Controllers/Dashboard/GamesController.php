@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\Game;
-use App\Platform;
+use App\Models\Game;
+use App\Models\Platform;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreGameRequest;
 

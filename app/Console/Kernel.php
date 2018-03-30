@@ -26,6 +26,7 @@ class Kernel extends ConsoleKernel
     {
         $schedule->command('parallel:close-registrations')->everyMinute()->withoutOverlapping();
         $schedule->command('parallel:start-tournaments')->everyMinute()->withoutOverlapping();
+        $schedule->command('parallel:report-scores')->everyMinute();
     }
 
     /**

@@ -7,12 +7,7 @@
 @section('content')
 	<div class="container clears-nav">
 		<section class="content-block">
-			@foreach($tournament->ruleset->sections as $section)
-				<section id="section-{{ $section->id }}">
-					<h3>{{ $section->title }}</h3>
-					{!! $section->content !!}
-				</section>
-			@endforeach
+			{!! $tournament->ruleset->content !!}
 		</section>
 
 		<section class="content-block">

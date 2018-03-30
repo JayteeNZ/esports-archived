@@ -3,8 +3,7 @@
 namespace App\Http\Controllers\Account;
 
 use Hash;
-use Alert;
-use App\User;
+use App\Models\User;
 use App\Http\Controllers\Controller;
 
 class PasswordController extends Controller
@@ -30,7 +29,7 @@ class PasswordController extends Controller
 
 		$user->update(['password' => bcrypt(request('new_password'))]);
 
-		Alert::success('Update your Password!', 'Password Changed');
+		alert()->success('Update your Password!', 'Password Changed');
 		return redirect()->back();
 	}
 

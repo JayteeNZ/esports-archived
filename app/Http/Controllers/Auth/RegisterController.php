@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
-use App\Authorization\Role;
+use App\Models\User;
+use App\Models\Role;
 use Illuminate\Http\Request;
+use App\Events\Account\UserHasRegistered;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -53,7 +54,7 @@ class RegisterController extends Controller
             'first_name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
-            'username' => 'required|max:255|unique:users|alpha_num',
+            'username' => 'required|max:255|unique:users|alpha_num|min:2',
             'password' => 'required|string|min:6|confirmed',
         ]);
     }
@@ -66,15 +67,13 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        $user = User::create([
+        return User::create([
             'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],
             'email' => $data['email'],
             'username' => $data['username'],
             'password' => bcrypt($data['password']),
         ]);
-        $user->profile()->create([]);
-        return $user;
     }
 
     /**
@@ -86,9 +85,7 @@ class RegisterController extends Controller
      */
     protected function registered(Request $request, $user)
     {
-        $role = Role::where('name', config('parallel.default_role'))->first();
-        $user->attachRole($role->id);
-
+        event(new UserHasRegistered($user));
         alert()->success('Welcome to Parallel. Please scroll down and read all information.', "Hey, {$user->first_name}")->persistent('I promise');
     }
 }

@@ -21,6 +21,8 @@ class CreateTeamUserTable extends Migration
             $table->integer('position')->default(0); // 0 => member, 1 => substitute, 2 => captain, 3 => leader
             $table->foreign('team_id')->references('id')->on('teams')
                 ->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('user_id')->references('id')->on('users')
+                ->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

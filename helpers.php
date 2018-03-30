@@ -8,3 +8,9 @@ if (! function_exists('active')) {
 		return request()->is($route . '*') ? $class : '';
 	}
 }
+
+function return_if($value) {
+	if ($value == true) {
+		return $value;
+	}
+}

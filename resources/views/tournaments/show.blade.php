@@ -9,6 +9,24 @@
         <div class="row">
             <div class="col-md-8">
                 <section class="content-block">
+                    <h3>Information</h3>
+                    <p>Team registrations close 5 minutes prior to the Tournament commencing</p>
+                    <table class="table">
+                        <tr>
+                            <th>Commences at:</th>
+                            <td>{{ $tournament->starts_at->format('D jS M, Y - h:i A') }} NZT</td>
+                        </tr>
+                        <tr>
+                            <th>Registrations</th>
+                            <td>{{ $tournament->getRegistrationStatus() }}</td>
+                        </tr>
+                        <tr>
+                            <th>Status</th>
+                            <td>{{ $tournament->getStatus() }}</td>
+                        </tr>
+                    </table>
+                </section>
+                <section class="content-block">
                     <h3>Schedule</h3>
                     <table class="table">
                         @for ($i = 1; $i <= $tournament->getRounds(); $i++)

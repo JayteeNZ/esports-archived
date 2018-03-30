@@ -7,7 +7,7 @@
 @section('content')
 	<section class="container">
 		<div class="row">
-			<div class="col-lg-4 col-xl-4">
+			<div class="col-lg-4 col-xl-3">
 				<div class="card card-transparent">
 					<div class="card-header">Biography</div>
 					<div class="card-block">
@@ -38,7 +38,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-lg-7 col-xl-7 offset-md-1 mt-4">
+			<div class="col-lg-7 col-xl-8 offset-md-1 mt-4">
 				<h4>Statistics</h4>
 				<p>Statistics aren't currently available. Check back in a few days when we've added them in.</p>
 			</div>

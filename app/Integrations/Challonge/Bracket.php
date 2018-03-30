@@ -2,36 +2,18 @@
 
 namespace App\Integrations\Challonge;
 
-use App\Tournament;
-use Reflex\Challonge\Challonge;
+use App\Models\Tournament;
+use App\Transformers\TournamentTransformer;
 
-class Bracket
+class Bracket extends Challonge
 {
 	/**
 	 * Creates a new Bracket on Challonge.
 	 * @return [type] [description]
 	 */
-	public function create(Challonge $challonge, Tournament $tournament)
+	public function create(Tournament $tournament)
 	{
-		$bracket = $challonge->createTournament([
-			'tournament[name]' 			=> $tournament->name,
-			'tournament[url]' 			=> md5(uniqid(true)),
-			'tournament[subdomain]' 	=> config('services.challonge.subdomain'),
-			'tournament[tournament_type]' => $tournament->format,
-            'tournament[open_signup]' => false,
-            'tournament[hold_third_place_match]' => $tournament->allows_third_place_match
-		]);
-
-		return $bracket;
-	}
-
-	public function update()
-	{
-
-	}
-
-	public function destroy()
-	{
-
+		$transformer = new TournamentTransformer;
+		return $this->challonge->createTournament($transformer->transform($tournament));
 	}
 }

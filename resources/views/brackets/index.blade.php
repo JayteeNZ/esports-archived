@@ -6,6 +6,7 @@
 
 @section('content')
 	<div class="container clears-nav">
+		<h3 class="mb-3">Brackets</h3>
 		@if (!$tournament->hasCommenced())
 			<p>Brackets will be available once the competitition has commenced.</p>
 		@else

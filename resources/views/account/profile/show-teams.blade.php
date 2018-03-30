@@ -11,7 +11,7 @@
 			<div class="col-md-3 d-flex justify-content-center">
 				<div class="team-card">
 					<div class="team-card-image" style="position: relative;">
-						<img src="https://static.pexels.com/photos/37836/silhouette-fitness-bless-you-bike-37836.jpeg" style="max-width:100%; height: 230px">
+						<img src="/images/default-avatar.png" style="width:100%; height: 230px">
 						<span class="badge badge-purple" style="position: absolute; bottom: 20px; right: 20px">2 - 0</span>
 					</div>
 					<div class="team-card-body">

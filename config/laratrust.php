@@ -29,7 +29,7 @@ return [
     | Please check the docs to see what you need to do in case you have the package already configured.
     |
     */
-    'use_teams' => true,
+    'use_teams' => false,
 
     /*
     |--------------------------------------------------------------------------
@@ -44,7 +44,7 @@ return [
     |
     */
     'user_models' => [
-        'users' => 'App\User',
+        'users' => 'Parallel\Models\Account\User',
     ],
 
     /*
@@ -61,17 +61,17 @@ return [
         /**
          * Role model
          */
-        'role' => 'App\Authorization\Role',
+        'role' => 'Parallel\Models\Account\Role',
 
         /**
          * Permission model
          */
-        'permission' => 'App\Authorization\Permission',
+        'permission' => 'Parallel\Models\Account\Permission',
 
         /**
          * Team model
          */
-        'team' => 'App\Authorization\Team',
+        'team' => 'Parallel\Models\Account\Team',
 
     ],
 
@@ -97,7 +97,7 @@ return [
         /**
          * Teams table.
          */
-        'teams' => 'authorization_teams',
+        'teams' => 'auth_teams',
 
         /**
          * Role - User intermediate table.
@@ -160,12 +160,12 @@ return [
          * Method to be called in the middleware return case.
          * Available: abort|redirect
          */
-        'handling' => 'redirect',
+        'handling' => 'abort',
 
         /**
          * Parameter passed to the middleware_handling method
          */
-        'params' => '404',
+        'params' => '403',
 
     ],
 

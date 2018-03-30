@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\Game;
-use App\Ruleset;
-use App\RulesetSection;
+use App\Models\Game;
+use App\Models\Ruleset;
 
 class RulesetsController
 {
@@ -40,15 +39,10 @@ class RulesetsController
 		$data = request()->validate([
 			'name' => 'required',
 			'game_id' => 'required|numeric',
-			'for' => 'nullable',
 			'content' => 'required'
 		]);
 
-		$ruleset = Ruleset::create(request(['name', 'game_id', 'for']));
-		$ruleset->sections()->create([
-			'title' => $ruleset->name,
-			'content' => request('content')
-		]);
+		$ruleset = Ruleset::create(request(['name', 'game_id', 'content']));
 
 		return redirect('/dashboard/rulesets');
 	}

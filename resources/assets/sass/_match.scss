@@ -63,3 +63,20 @@
 	font-size: .875rem;
 	font-weight: 500;
 }
+
+.score-block {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	width: 500px;
+	line-height: 1.4;
+}
+
+.score-block .score {
+	font-size: 3.4rem;
+	margin: 0;
+}
+
+.score-block .team {
+	font-size: 1.4rem
+}

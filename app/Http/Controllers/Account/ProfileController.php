@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Account;
 
+use Storage;
+use App\Models\User;
 use Illuminate\Validation\Rule;
-use App\User;
 use App\Http\Controllers\Controller;
 
 class ProfileController extends Controller
@@ -28,11 +29,11 @@ class ProfileController extends Controller
 
 		$data = request()->validate([
 			'account_xbox' => [
-				Rule::unique('profiles')->ignore($user->id, 'user_id'),
+				Rule::unique('user_profile')->ignore($user->id, 'user_id'),
 				'nullable'
 			],
 			'account_playstation' => [
-				Rule::unique('profiles')->ignore($user->id, 'user_id'),
+				Rule::unique('user_profile')->ignore($user->id, 'user_id'),
 				'nullable'
 			],
 			'location' => 'nullable',
@@ -41,8 +42,22 @@ class ProfileController extends Controller
 			'motto' => 'nullable',
 			'social_twitter' => 'nullable',
 			'social_youtube' => 'nullable',
-			'account_steam' => 'nullable'
+			'account_steam' => 'nullable',
+			'profile_image' => 'mimes:jpg,jpeg,png',
+			'profile_cover' => 'mimes:jpg,jpeg,png'
 		]);
+
+		if (request()->has('profile_image')) {
+			$avatar = request()->file('profile_image')->store('avatars', 'public');
+			Storage::disk('local')->delete('avatars/' . $user->profile->profile_image);
+			$data['profile_image'] = $avatar;
+		}
+
+		if (request()->has('profile_cover')) {
+			$cover = request()->file('profile_cover')->store('covers', 'public');
+			Storage::disk('local')->delete('covers/' . $user->profile->profile_image);
+			$data['profile_cover'] = $cover;
+		}
 
 		$user->profile->update($data);
 

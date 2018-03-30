@@ -18,6 +18,8 @@ class CreateTeamsTable extends Migration
             $table->string('name');
             $table->unsignedInteger('challonge_id')->nullable();
             $table->unsignedInteger('tournament_id');
+            $table->foreign('tournament_id')->references('id')->on('tournaments')
+                ->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

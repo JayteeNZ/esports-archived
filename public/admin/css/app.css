@@ -1,3 +1,15 @@
+.badge {
+  padding: .7em 1.2em;
+  margin-right: .4em;
+}
+
+.badge-purple {
+  color: #fff;
+  border-color: #462c5a;
+  background: #613d7c;
+  font-size: 1rem;
+}
+
 /**
  * Trumbowyg v2.7.0 - A lightweight WYSIWYG editor
  * Default stylesheet for Trumbowyg editor
@@ -822,5 +834,14 @@ body.trumbowyg-body-fullscreen {
 
 .trumbowyg-dark .trumbowyg-overlay {
   background-color: rgba(15, 15, 15, 0.6);
+}
+
+html,
+body {
+  font-size: 14px;
+}
+
+.form-group > label {
+  font-size: 14px;
 }
 

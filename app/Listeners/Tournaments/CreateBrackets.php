@@ -36,8 +36,8 @@ class CreateBrackets
 
         for ($counter = 0; $counter < $bracketsToCreate; $counter++) 
         {
-            $this->bracket = (new Bracket)->create($event->challonge, $event->tournament);
-            event(new BracketsCreated($event->tournament, $this->bracket, $teamGroups[$counter]));
+            $bracket = (new Bracket)->create($event->tournament);
+            event(new BracketsCreated($event->tournament, $bracket, $teamGroups[$counter]));
         }
     }
 

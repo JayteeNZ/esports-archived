@@ -15,11 +15,18 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+require('./echo');
+
 
 Vue.component('search-filter', require('./components/SearchFilter.vue'));
 Vue.component('tournament', require('./components/Tournament.vue'));
 Vue.component('tournaments', require('./components/Tournaments.vue'));
 Vue.component('autocomplete', require('./components/AutoComplete.vue'));
+
+// Live Comments
+Vue.component('live-chat', require('./components/comments/LiveChat.vue'));
+Vue.component('live-comments', require('./components/comments/LiveComments.vue'));
+Vue.component('live-comment', require('./components/comments/LiveComment.vue'));
 
 let app = new Vue({
 	el: '#app'

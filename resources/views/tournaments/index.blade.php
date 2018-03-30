@@ -8,7 +8,7 @@
 	<div class="filter">
 		<search-filter :data="{{ $platforms }}"></search-filter>
 	</div>
-	<div class="container">
+	<div class="container" style="margin-top: 6rem">
 		@if ($tournaments->count())
 			<tournaments :data="{{ $tournaments }}"></tournaments>
 		@else

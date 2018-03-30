@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Dashboard\Authorization;
 
-use App\Authorization\Role;
-use App\Authorization\Permission;
+use App\Models\Role;
+use App\Models\Permission;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreRoleRequest;
 

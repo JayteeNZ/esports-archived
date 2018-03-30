@@ -1,0 +1,19 @@
+
+.full-page {
+	margin-top: $navbar-height;
+	display: flex;
+	flex-direction: column;
+	@include media-breakpoint-up(md) {
+		flex-direction: row;
+	}
+}
+
+.full-page .block {
+	flex: 1;
+}
+
+.block .block-heading {
+	display: flex;
+	align-items: center;
+	padding: 1rem;
+}

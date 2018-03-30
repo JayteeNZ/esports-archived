@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Tournaments;
 
-use App\Tournament;
+use App\Models\Tournament;
 use App\Http\Controllers\Controller;
 
 class BracketsController extends Controller

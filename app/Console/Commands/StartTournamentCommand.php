@@ -3,9 +3,10 @@
 namespace App\Console\Commands;
 
 use Carbon\Carbon;
-use App\Tournament;
+use App\Models\Tournament;
 use Illuminate\Console\Command;
 use App\Events\Tournaments\TournamentStarted;
+use App\Events\Tournaments\InsufficientTeamsRegistered;
 
 class StartTournamentCommand extends Command
 {
@@ -42,6 +43,9 @@ class StartTournamentCommand extends Command
     {
         $tournaments = Tournament::whereScheduledAndRegistrationClosed()->get();
         foreach($tournaments as $tournament) {
+            if ($tournament->teams->count() < $tournament->min_teams) {
+                return event(new InsufficientTeamsRegistered($tournament));
+            }
             if ($tournament->starts_at->lte(Carbon::now())) {
                 event(new TournamentStarted($tournament));
             }

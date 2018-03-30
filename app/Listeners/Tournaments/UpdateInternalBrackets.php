@@ -2,7 +2,7 @@
 
 namespace App\Listeners\Tournaments;
 
-use App\Bracket;
+use App\Models\Bracket;
 use App\Events\Tournaments\BracketsCreated;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;

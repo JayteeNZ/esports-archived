@@ -3,7 +3,7 @@
 namespace App\Console\Commands;
 
 use Carbon\Carbon;
-use App\Tournament;
+use App\Models\Tournament;
 use Illuminate\Console\Command;
 use App\Events\Tournaments\RegistrationClosed;
 
@@ -42,8 +42,15 @@ class CloseRegistrationCommand extends Command
     {
         $tournaments = Tournament::whereScheduled()->get();
         foreach($tournaments as $tournament) {
-            if ($tournament->starts_at->addMinutes(-5)->lte(Carbon::now()) && $tournament->registration_status === 1) {
+            if (
+                $tournament->starts_at->addMinutes(-5)->lte(Carbon::now())
+                && $tournament->registration_status === 1 
+                && $tournament->teams->count() >= $tournament->min_teams
+            ) {
                 event(new RegistrationClosed($tournament));
+            }
+            else {
+                $tournament->setRegistrationStatus(false);
             }
         }
     }

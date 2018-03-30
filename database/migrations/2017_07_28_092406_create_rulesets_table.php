@@ -17,7 +17,9 @@ class CreateRulesetsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->unsignedInteger('game_id');
-            $table->string('for')->nullable()->default('tournament');
+            $table->text('content');
+            $table->foreign('game_id')->references('id')->on('games')
+                ->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

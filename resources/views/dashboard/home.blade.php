@@ -3,7 +3,7 @@
 @section('content')
 	<div class="card">
         <div class="card__header">
-            <h2>Registered Users ({{ \App\User::count() }}) <small>The graph displays the frequency of account registrations</small></h2>
+            <h2>Registered Users ({{ \Parallel\Models\Account\User::count() }}) <small>The graph displays the frequency of account registrations</small></h2>
             <div class="actions">
                 <a href=""><i class="zmdi zmdi-check-all"></i></a>
                 <a href=""><i class="zmdi zmdi-trending-up"></i></a>

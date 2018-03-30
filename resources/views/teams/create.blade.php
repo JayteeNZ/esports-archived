@@ -7,23 +7,22 @@
 @section('content')
 	<div class="container clears-nav">
 		<div class="row">
-			<div class="col-md-6 offset-md-3">
+			<div class="col-md-6">
 				<form action="{{ route('teams.store', $tournament) }}" method="POST">
 					<div class="form-group {{ $errors->has('name') ? 'has-danger' : '' }}">
-						<label>Team Name</label>
-						<input type="text" name="name" class="form-control">
+						<input type="text" name="name" class="transparent-input" placeholder="Enter a team name">
 						@if ($errors->has('name'))
 							<div class="form-control-feedback">{{ $errors->first('name') }}</div>
 						@endif
 					</div>
 					<div class="form-group">
-						<label>You:</label>
-						<input type="text" class="form-control" disabled="disabled" value="{{ auth()->user()->username }}">
+						<label>Team Leader</label>
+						<input type="text" class="form-control" disabled="disabled" value="You">
 					</div>
 					@for ($player = 2; $player <= (int) $tournament->players; $player++)
 						<div class="form-group {{ $errors->has("users.{$player}") ? 'has-danger' : '' }}">
 							<label>Player {{ $player }}:</label>
-							<autocomplete :data="{{ $users }}" name="users[{{ $player }}]"></autocomplete>
+							<autocomplete :data="{{ $users }}" name="users[{{$player}}]"></autocomplete>
 							@if ($errors->has("users.{$player}"))
 								<div class="form-control-feedback">{{ $errors->first("users.{$player}") }}</div>
 							@endif

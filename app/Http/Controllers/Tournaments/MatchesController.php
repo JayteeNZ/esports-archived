@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Tournaments;
 
-use App\Match;
-use App\Tournament;
+use App\Models\Match;
+use App\Models\Tournament;
 use App\Http\Controllers\Controller;
 
 class MatchesController extends Controller

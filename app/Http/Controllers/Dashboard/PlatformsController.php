@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\Platform;
+use App\Models\Platform;
 use App\Http\Controllers\Controller;
 
 class PlatformsController extends Controller

@@ -2,12 +2,9 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\Game;
-use App\Platform;
-use App\Ruleset;
 use Carbon\Carbon;
-use App\Tournament;
 use App\Http\Controllers\Controller;
+use App\Models\{Game, Platform, Ruleset, Tournament};
 
 class TournamentsController extends Controller
 {

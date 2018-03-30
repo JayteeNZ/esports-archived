@@ -10,7 +10,8 @@
 try {
     window.$ = window.jQuery = require('jquery');
 
-    require('bootstrap-v4-master');
+    window.Popper = require('popper.js').default;
+    require('bootstrap');
 } catch (e) {}
 
 /**
@@ -21,7 +22,7 @@ try {
 
 window.axios = require('axios');
 
-// window.axios.defaults.headers.common['X-CSRF-TOKEN'] = window.Laravel.csrfToken;
+window.axios.defaults.headers.common['X-CSRF-TOKEN'] = window.Parallel.csrfToken;
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /**
@@ -30,11 +31,11 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
  * allows your team to easily build robust real-time web applications.
  */
 
-// import Echo from 'laravel-echo'
-
 // window.Pusher = require('pusher-js');
 
-// window.Echo = new Echo({
-//     broadcaster: 'pusher',
-//     key: 'your-pusher-key'
-// });
+import Echo from "laravel-echo"
+
+window.Echo = new Echo({
+    broadcaster: 'socket.io',
+    host: 'parallel.dev:6001'
+});

@@ -7,10 +7,10 @@
 @section('content')
 	<div class="container clears-nav">
 		<section class="content-block">
-			<h3 class="mb-5">Matches</h3>
+			<h3 class="mb-3">Matches</h3>
 			
 			<div class="row">
-				@foreach($tournament->matches()->where('team_one_id', '!=', null)->where('team_two_id', '!=', null)->get() as $match)
+				@forelse($tournament->matches as $match)
 				<div class="col-md-8">
 					<div class="match">
 						<div class="match-content">
@@ -19,9 +19,9 @@
 							</div>
 							<div class="match-data">
 								<div class="scores">
-									<span>2</span>
+									<span>{{ $match->getTeamOneScore() }}</span>
 									<span>:</span>
-									<span>1</span>
+									<span>{{ $match->getTeamTwoScore() }}</span>
 								</div>
 							</div>
 							<div class="match-team">
@@ -29,13 +29,17 @@
 							</div>
 						</div>
 						<div class="match-actions">
-							<div class="status">Scheduled</div>
+							<div class="status">{{ $match->getStatus() }}</div>
 							<div class="round">Round {{ $match->round }}</div>
 							<div class="view ml-auto"><a href="{{ route('matches.show', [$tournament, $match]) }}">View Match</a></div>
 						</div>
 					</div>
 				</div>
-				@endforeach
+				@empty
+				<div class="col-md-8">
+					<p>Matches will be available once the Tournament has commenced.</p>
+				</div>
+				@endforelse
 			</div>
 
 		</section>

@@ -11,6 +11,11 @@
 |
 */
 
-Broadcast::channel('App.User.{id}', function ($user, $id) {
-    return (int) $user->id === (int) $id;
+// for online users
+Broadcast::channel('chat', function ($user) {
+    return [
+    	'id' => $user->id,
+    	'username' => $user->username
+    ];
 });
+

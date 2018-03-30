@@ -2,8 +2,8 @@
 
 namespace App\Listeners\Tournaments;
 
-use App\Match;
-use App\Team;
+use App\Models\Match;
+use App\Models\Team;
 use App\Events\Tournaments\MatchesRetrieved;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -28,16 +28,34 @@ class UpdateInternalMatches
      */
     public function handle(MatchesRetrieved $event)
     {
-        foreach($event->matches as $match) {
-            Match::create([
+        foreach($this->filterMatches($event->matches) as $match) {
+            $internalMatch = Match::create([
                 'challonge_id' => $match->id,
-                'team_one_id' => empty($match->player1_id) ? null : Team::where('challonge_id', $match->player1_id)->first()->id,
-                'team_two_id' => empty($match->player2_id) ? null : Team::where('challonge_id', $match->player2_id)->first()->id,
                 'tournament_id' => $event->tournament->id,
+                'challonge_tournament_id' => $match->tournament_id,
                 'round' => $match->round,
                 'status' => 1,
                 'identifier' => $match->identifier
             ]);
+
+            $teamOne = Team::where('challonge_id', $match->player1_id)->first()->id;
+            $teamTwo = Team::where('challonge_id', $match->player2_id)->first()->id;
+
+
+            $internalMatch->teams()->attach($teamOne);
+            $internalMatch->teams()->attach($teamTwo);
         }
+    }
+
+    protected function filterMatches($matches)
+    {
+        $scheduled = [];
+        foreach($matches as $match) {
+            if ($match->player1_id === null || $match->player2_id === null) {
+                continue;
+            }
+            $scheduled[] = $match;
+        }
+        return $scheduled;
     }
 }

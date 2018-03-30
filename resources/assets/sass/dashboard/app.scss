@@ -1,2 +1,13 @@
 
-@import "~trumbowyg/dist/ui/sass/trumbowyg.scss"
+@import "variables";
+
+@import "components/framework";
+@import "~trumbowyg/dist/ui/sass/trumbowyg.scss";
+
+html, body {
+	font-size: 14px;
+}
+
+.form-group > label {
+	font-size: 14px;
+}

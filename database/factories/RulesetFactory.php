@@ -7,8 +7,7 @@ use Carbon\Carbon;
 $factory->define(App\Ruleset::class, function (Faker $faker) {
     return [
         'name' => $faker->name,
-        'game_id' => function () {
-            return 1;
-        }
+        'game_id' => 1,
+        'content' => $faker->name
     ];
 });

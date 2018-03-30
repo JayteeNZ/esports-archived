@@ -31,8 +31,36 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\Tournaments\MatchesRetrieved' => [
             'App\Listeners\Tournaments\UpdateInternalMatches'
         ],
+        'App\Events\Tournaments\InsufficientTeamsRegistered' => [
+            'App\Listeners\Tournaments\DeleteTournament'
+        ],
         'App\Events\Tournaments\TournamentStarted' => [
             'App\Listeners\Tournaments\SetStatusToCommenced'
+        ],
+        'App\Events\Account\UserHasRegistered' => [
+            'App\Listeners\Account\AttachDefaultRole',
+            'App\Listeners\Account\CreateProfile',
+            'App\Listeners\Account\CreateStatistics'
+        ],
+        'App\Events\Match\ScoreReported' => [
+            'App\Listeners\Match\SetMatchStatus'
+        ],
+        'App\Events\Match\BothTeamsHaveReported' => [
+            'App\Listeners\Match\CompareScoresAndReport'
+        ],
+        'App\Events\Match\ScoreCalculationsComplete' => [
+            'App\Listeners\Match\SetStatusToComplete',
+            'App\Listeners\Match\UpdateScoresOnChallonge'
+        ],
+        'App\Events\Match\MatchDisputed' => [
+            'App\Listeners\Match\SetStatusToDisputed',
+            'App\Listeners\Notifications\NotifyStaffOfDispute'
+        ],
+        'App\Events\Tournaments\ChallongeUpdated' => [
+            'App\Listeners\Tournaments\SearchForNewMatches'
+        ],
+        'App\Events\Comments\MatchCommentCreated' => [
+
         ]
     ];
 
