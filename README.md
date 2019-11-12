@@ -9,6 +9,8 @@ Nevertheless, this should provide a starting point for developers to understand 
 
 I have open-sourced this for the above reasons, as I no longer take a personal, and deep interest in this subject anymore.
 
+I encourage developers of all experience levels to open-source projects they no longer develop. I had this feeling where I would be judged on the projects I developed, even if they are no longer relevant. After multiple years of developing, I no longer feel this way. I think it's important to share your code if you can, as it helps developers in all aspects, and encourages others to do the same, regardless of how shit the codebase itself is. At the end of the day, this community should be supportive to other users that want to learn and improve, and providing suggestions, or starting points, provides a huge impact on the future for their career, or personal hobby.
+
 ## This application will not run without considerable effort
 
 This repository will stay Archived and will not be updated in the future. It is for a learning guide only, and also for developers
