@@ -26,3 +26,7 @@ https://laracasts.com/@Jaytee
 
 Consider following me on Github. I am not an open-source contributor, however I do have applications which I sometimes like to share
 that also explains my thought process and how those problems may have been solved.
+
+## Learning Resources
+
+I used https://laracasts.com and https://codecourse.com when learning Laravel and associated technologies for this project. These two services are still highly-recommendable for developers starting out in modern developing using PHP. They both offer free and paid courses. I am also not affiliated with any of these services, this is my own personal expression.
